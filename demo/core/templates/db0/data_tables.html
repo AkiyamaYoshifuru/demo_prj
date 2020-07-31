@@ -1,0 +1,393 @@
+{% extends 'db0/base.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">遥测明细数据</h3>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">监测点位</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">车牌颜色</option>
+                    <option>United States</option>
+                </select>
+            </div>
+
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">判定结果</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">车辆归属</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">车道编号</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">燃料种类</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">车辆速度</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">车辆加速度</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">车道编号</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">风速</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">环境温度</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">湿度</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">大气压</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">风向</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">VSP</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">CO结果</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">CO<sub>2</sub>结果</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">NO结果</option>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <select class="custom-select d-block w-100 mt-2" id="country" required>
+                    <option value="">HC结果</option>
+                    <option>United States</option>
+                </select>
+            </div>
+
+            <div class="col-md-2 mb-3">
+                <div class="md-form md-outline my-2">
+                    <input type="text" id="address2" class="form-control" required>
+                    <label for="address2">车牌号码</label>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <span class="table-remove"><button type="button"
+                                                   class="btn btn-light btn-rounded btn-sm my-0">查询</button></span>
+                <span class="table-remove"><button type="button"
+                                                   class="btn btn-light btn-rounded btn-sm my-0">清空</button></span>
+                <span class="table-remove"><button type="button"
+                                                   class="btn btn-light btn-rounded btn-sm my-0">上次输入筛选条件</button></span>
+            </div>
+            <div class="col-md-4 mb-3">
+
+                <span class="table-remove"><button type="button"
+                                                   class="btn btn-light btn-rounded btn-sm my-0">全选</button></span>
+                <span class="table-remove"><button type="button"
+                                                   class="btn btn-light btn-rounded btn-sm my-0">反选</button></span>
+                <span class="table-remove"><button type="button"
+                                                   class="btn btn-light btn-rounded btn-sm my-0">批量导出Excel</button></span>
+                <span class="table-remove"><button type="button"
+                                                   class="btn btn-light btn-rounded btn-sm my-0">批量打印</button></span>
+                <span class="table-remove"><button type="button"
+                                                   class="btn btn-light btn-rounded btn-sm my-0">批量删除</button></span>
+            </div>
+
+        </div>
+        <div id="table" class="table-editable">
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+                <tbody>
+                <tr>
+                    <th></th>
+                    <th class="text-center">#</th>
+                    <th class="text-center">通过时间</th>
+                    <th class="text-center">判定结果</th>
+                    <th class="text-center">车道编号</th>
+                    <th class="text-center">车辆类型</th>
+                    <th class="text-center">车牌</th>
+                    <th class="text-center">黑度</th>
+                    <th class="text-center">不透光度</th>
+                    <th class="text-center">CO<sub>2</sub>值</th>
+                    <th class="text-center">CO值</th>
+                    <th class="text-center">NO值</th>
+                    <th class="text-center">HC值</th>
+                    <th class="text-center">操作</th>
+
+                </tr>
+                <tr>
+                    <th style="padding-left:0!important; padding-right:0;!important">
+                        <input class="form-check-input" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="label-table"></label>
+                    </th>
+                    <td class="pt-3-half" contenteditable="true">1</td>
+                    <td class="pt-3-half" contenteditable="true">2019-08-18 18:28:36</td>
+                    <td class="pt-3-half" contenteditable="true">
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-success btn-rounded btn-sm my-0">合格</button></span>
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">2</td>
+                    <td class="pt-3-half" contenteditable="true">轻型卡车</td>
+                    <td class="pt-3-half" contenteditable="true"><strong>蓝</strong> 冀E E597C</td>
+                    <td class="pt-3-half" contenteditable="true">0</td>
+                    <td class="pt-3-half" contenteditable="true">4.167</td>
+                    <td class="pt-3-half" contenteditable="true">13.922</td>
+                    <td class="pt-3-half" contenteditable="true">1.579</td>
+                    <td class="pt-3-half" contenteditable="true">333.669</td>
+                    <td class="pt-3-half" contenteditable="true">27.07</td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-primary btn-rounded btn-sm my-0">查看</button></span>
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">删除</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left:0!important; padding-right:0;!important">
+                        <input class="form-check-input" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="label-table"></label>
+                    </th>
+                    <td class="pt-3-half" contenteditable="true">2</td>
+                    <td class="pt-3-half" contenteditable="true">2019-08-18 18:28:36</td>
+                    <td class="pt-3-half" contenteditable="true">
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-success btn-rounded btn-sm my-0">合格</button></span>
+                    </td>
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">2</td>
+                    <td class="pt-3-half" contenteditable="true">SUV/MPV</td>
+                    <td class="pt-3-half" contenteditable="true"><strong>蓝</strong> 冀E N7695</td>
+                    <td class="pt-3-half" contenteditable="true">0</td>
+                    <td class="pt-3-half" contenteditable="true">9.075</td>
+                    <td class="pt-3-half" contenteditable="true">14.314</td>
+                    <td class="pt-3-half" contenteditable="true">1.032</td>
+                    <td class="pt-3-half" contenteditable="true">208.678</td>
+                    <td class="pt-3-half" contenteditable="true">73.205</td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-primary btn-rounded btn-sm my-0">查看</button></span>
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">删除</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left:0!important; padding-right:0;!important">
+                        <input class="form-check-input" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="label-table"></label>
+                    </th>
+                    <td class="pt-3-half" contenteditable="true">3</td>
+                    <td class="pt-3-half" contenteditable="true">2019-08-18 18:28:36</td>
+                    <td class="pt-3-half" contenteditable="true">
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-success btn-rounded btn-sm my-0">合格</button></span>
+                    </td>
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">1</td>
+                    <td class="pt-3-half" contenteditable="true">轿车</td>
+                    <td class="pt-3-half" contenteditable="true"><strong>蓝</strong> 冀E X4435</td>
+                    <td class="pt-3-half" contenteditable="true">0</td>
+                    <td class="pt-3-half" contenteditable="true">8.869</td>
+                    <td class="pt-3-half" contenteditable="true">13.94</td>
+                    <td class="pt-3-half" contenteditable="true">1.553</td>
+                    <td class="pt-3-half" contenteditable="true">184.531</td>
+                    <td class="pt-3-half" contenteditable="true">136.967</td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-primary btn-rounded btn-sm my-0">查看</button></span>
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">删除</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left:0!important; padding-right:0;!important">
+                        <input class="form-check-input" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="label-table"></label>
+                    </th>
+                    <td class="pt-3-half" contenteditable="true">4</td>
+                    <td class="pt-3-half" contenteditable="true">2019-08-18 18:28:36</td>
+                    <td class="pt-3-half" contenteditable="true">
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-success btn-rounded btn-sm my-0">合格</button></span>
+                    </td>
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">2</td>
+                    <td class="pt-3-half" contenteditable="true">轿车</td>
+                    <td class="pt-3-half" contenteditable="true"><strong>蓝</strong> 冀D 058WZ</td>
+                    <td class="pt-3-half" contenteditable="true">0</td>
+                    <td class="pt-3-half" contenteditable="true">7.267</td>
+                    <td class="pt-3-half" contenteditable="true">14.81</td>
+                    <td class="pt-3-half" contenteditable="true">1.053</td>
+                    <td class="pt-3-half" contenteditable="true">258.094</td>
+                    <td class="pt-3-half" contenteditable="true">80.748</td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-primary btn-rounded btn-sm my-0">查看</button></span>
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">删除</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left:0!important; padding-right:0;!important">
+                        <input class="form-check-input" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="label-table"></label>
+                    </th>
+                    <td class="pt-3-half" contenteditable="true">5</td>
+                    <td class="pt-3-half" contenteditable="true">2019-08-18 18:28:36</td>
+                    <td class="pt-3-half" contenteditable="true">
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-success btn-rounded btn-sm my-0">合格</button></span>
+                    </td>
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">2</td>
+                    <td class="pt-3-half" contenteditable="true">轿车</td>
+                    <td class="pt-3-half" contenteditable="true"><strong>绿</strong> 冀E H759G</td>
+                    <td class="pt-3-half" contenteditable="true">0</td>
+                    <td class="pt-3-half" contenteditable="true">0</td>
+                    <td class="pt-3-half" contenteditable="true">0.013</td>
+                    <td class="pt-3-half" contenteditable="true">0.059</td>
+                    <td class="pt-3-half" contenteditable="true">0</td>
+                    <td class="pt-3-half" contenteditable="true">0</td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-primary btn-rounded btn-sm my-0">查看</button></span>
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">删除</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left:0!important; padding-right:0;!important">
+                        <input class="form-check-input" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="label-table"></label>
+                    </th>
+                    <td class="pt-3-half" contenteditable="true">6</td>
+                    <td class="pt-3-half" contenteditable="true">2019-08-18 18:28:36</td>
+                    <td class="pt-3-half" contenteditable="true">
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">超标</button></span>
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">1</td>
+                    <td class="pt-3-half" contenteditable="true">集装箱卡车</td>
+                    <td class="pt-3-half" contenteditable="true"><strong>黄</strong> 冀E H2588</td>
+                    <td class="pt-3-half" contenteditable="true">2</td>
+                    <td class="pt-3-half" contenteditable="true">10.584</td>
+                    <td class="pt-3-half" contenteditable="true">14.007</td>
+                    <td class="pt-3-half" contenteditable="true">1.884</td>
+                    <td class="pt-3-half" contenteditable="true">398.707</td>
+                    <td class="pt-3-half" contenteditable="true">67.74</td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-primary btn-rounded btn-sm my-0">查看</button></span>
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">删除</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left:0!important; padding-right:0;!important">
+                        <input class="form-check-input" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="label-table"></label>
+                    </th>
+                    <td class="pt-3-half" contenteditable="true">7</td>
+                    <td class="pt-3-half" contenteditable="true">2019-08-18 18:28:36</td>
+                    <td class="pt-3-half" contenteditable="true">
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-success btn-rounded btn-sm my-0">合格</button></span>
+                    </td>
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">2</td>
+                    <td class="pt-3-half" contenteditable="true">SUV/MPV</td>
+                    <td class="pt-3-half" contenteditable="true"><strong>蓝</strong> 冀E N7695</td>
+                    <td class="pt-3-half" contenteditable="true">0</td>
+                    <td class="pt-3-half" contenteditable="true">7.482</td>
+                    <td class="pt-3-half" contenteditable="true">13.703</td>
+                    <td class="pt-3-half" contenteditable="true">1.271</td>
+                    <td class="pt-3-half" contenteditable="true">158.011</td>
+                    <td class="pt-3-half" contenteditable="true">111.5</td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-primary btn-rounded btn-sm my-0">查看</button></span>
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">删除</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding-left:0!important; padding-right:0;!important">
+                        <input class="form-check-input" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="label-table"></label>
+                    </th>
+                    <td class="pt-3-half" contenteditable="true">8</td>
+                    <td class="pt-3-half" contenteditable="true">2019-08-18 18:28:36</td>
+                    <td class="pt-3-half" contenteditable="true">
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-success btn-rounded btn-sm my-0">合格</button></span>
+                    </td>
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">2</td>
+                    <td class="pt-3-half" contenteditable="true">轿车</td>
+                    <td class="pt-3-half" contenteditable="true"><strong>蓝</strong> 冀E N7695</td>
+                    <td class="pt-3-half" contenteditable="true">0</td>
+                    <td class="pt-3-half" contenteditable="true">7.103</td>
+                    <td class="pt-3-half" contenteditable="true">13.8</td>
+                    <td class="pt-3-half" contenteditable="true">14.517</td>
+                    <td class="pt-3-half" contenteditable="true">342.311</td>
+                    <td class="pt-3-half" contenteditable="true">45.3</td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                                                           class="btn btn-primary btn-rounded btn-sm my-0">查看</button></span>
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">删除</button></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

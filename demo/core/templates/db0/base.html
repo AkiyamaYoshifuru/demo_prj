@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>控制台-实时监测</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'db0/css/awe_all.css' %}">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'db0/css/bootstrap.min.css' %}">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="{% static 'db0/css/mdb.css' %}">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="{% static 'db0/css/style.css' %}">
+</head>
+
+<body>
+<header>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color double-nav">
+        <!--fixed-top-->
+        <!-- SideNav slide-out button -->
+        <div class="float-left">
+            <a href="#" data-activates="slide-out" class="button-collapse">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-dn mr-auto white-text">
+            <p>仪器设备参数设置</p>
+        </div>
+
+        <!-- Links -->
+        <ul class="nav navbar-nav nav-flex-icons ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'dashboard' %}">
+                    <i class="fas fa-window-restore"></i>
+                    <span class="clearfix d-none d-sm-inline-block">控制台</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'data_tables' %}">
+                    <i class="fas fa-database"></i>
+                    <span class="clearfix d-none d-sm-inline-block">遥测明细数据</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'statistical_chart' %}">
+                    <i class="fas fa-file-excel"></i>
+                    <span class="clearfix d-none d-sm-inline-block">数据统计分析</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i>
+                    <span class="clearfix d-none d-sm-inline-block">运维设置与手动标定</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'device_setting' %}">串口和摄像头参数设置</a>
+                    <a class="dropdown-item" href="{% url 'value_limit_input' %}">手动标定参数输入</a>
+                    <a class="dropdown-item" href="{% url 'upload_status' %}">点位数据上传状态</a>
+                </div>
+            </li>
+        </ul>
+
+    </nav>
+    <!--/.Navbar-->
+
+    <!-- Sidebar navigation -->
+    <div id="slide-out" class="side-nav sn-bg-4">
+        <ul class="custom-scrollbar">
+            <!-- Logo -->
+            <li class="logo-sn waves-effect">
+                <div class=" text-center">
+                    <a href="#" class="pl-0">
+                        <img src="{% static 'db0/img/car_main.jpg' %}" class>
+                    </a>
+                </div>
+            </li>
+            <!--/. Logo -->
+            <!--Search Form-->
+            <li>
+                <form class="search-form" role="search">
+                    <div class="form-group md-form mt-0 pt-1 waves-light">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                </form>
+            </li>
+            <!--/.Search Form-->
+            <!-- Side navigation links -->
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-chevron-right"></i>
+                        Submit blog<i class="fa fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#" class="waves-effect">Submit listing</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">Registration form</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-hand-pointer-o"></i>
+                        Instruction<i class="fa fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#" class="waves-effect">For bloggers</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">For authors</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye"></i> About<i
+                            class="fa fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#" class="waves-effect">Introduction</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">Monthly meetings</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope-o"></i> Contact
+                        me<i class="fa fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#" class="waves-effect">FAQ</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">Write a message</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">FAQ</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">Write a message</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">FAQ</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">Write a message</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">FAQ</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">Write a message</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="index.html" class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye"></i>
+                        调试页面</a>
+                    </li>
+                </ul>
+            </li>
+            <!--/. Side navigation links -->
+        </ul>
+        <div class="sidenav-bg rgba-blue-strong"></div>
+    </div>
+    <!--/. Sidebar navigation -->
+
+</header>
+<!--Main Navigation-->
+
+<main id="content">
+        {% block content %}{% endblock %}
+</main>
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="{% static 'db0/js/jquery-3.4.1.min.js' %}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{% static 'db0/js/popper.min.js' %}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{% static 'db0/js/bootstrap.min.js' %}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{% static 'db0/js/mdb.min.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'db0/js/data_tables.js' %}"></script>
+<script type="text/javascript" src="{% static 'db0/js/statistical_chart.js' %}"></script>
+
+<script type="text/javascript">
+    // SideNav Button Initialization
+    $(".button-collapse").sideNav();
+    // SideNav Scrollbar Initialization
+    var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+    var ps = new PerfectScrollbar(sideNavScrollbar);
+    // Material Select Initialization
+    $(document).ready(function () {
+        $('.mdb-select').material_select();
+    });
+    // Data Picker Initialization
+    $('.datepicker').pickadate();
+    // Tooltip Initialization
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+    // Minimalist chart
+    $(function () {
+        $('.min-chart#chart-sales').easyPieChart({
+            barColor: "#4caf50",
+            onStep: function (from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+    });
+    // Main chart
+    $(function () {
+        $('#folder-1').click(function () {
+            toastr.error("Folder 1 has been clicked!", "Folder 1", {
+                "positionClass": "md-toast-top-right",
+            });
+        });
+        $('#folder-2').click(function () {
+            // make it not dissappear
+            toastr.info("Folder 2 has been clicked!", "Folder 2",);
+        });
+        $('#folder-3').click(function () {
+            // make it not dissappear
+            toastr.info("Folder 3 has been clicked!", "Folder 3",);
+        });
+    });
+</script>
+</body>
+
+</html>

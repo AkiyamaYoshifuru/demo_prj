@@ -1,0 +1,355 @@
+{% extends 'db0/base.html' %}
+{% load static %}
+
+{% block content %}
+<!--Main layout-->
+<main class="pt-5 mx-lg-5">
+    <div class="container-fluid mt-5">
+
+        <!-- Heading -->
+        <div class="card mb-4 wow fadeIn">
+
+            <!--Card content-->
+            <div class="card-body d-sm-flex justify-content-between">
+
+                <h4 class="mb-2 mb-sm-0 pt-1">
+                    <a href="https://mdbootstrap.com/docs/jquery/" target="_blank">数据统计</a>
+                    <span>/</span>
+                    <span>东城区朝阳门内大街点位</span>
+                </h4>
+
+                <form class="d-flex justify-content-center">
+                    <!-- Default input -->
+                    <input type="search" placeholder="车牌号查询" aria-label="Search" class="form-control">
+                    <button class="btn btn-primary btn-sm my-0 p" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+        <!-- Heading -->
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-md-8 mb-4">
+
+                <!--Card-->
+                <div class="card">
+                    <div class="card-header text-center">
+                        48小时内超标车辆数据分布
+                    </div>
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <canvas id="myChart"></canvas>
+
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-4 mb-4">
+
+                <!--Card-->
+                <div class="card mb-4">
+
+                    <!-- Card header -->
+                    <div class="card-header text-center">
+                        遥测数据分布（时长：8天14小时）
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <canvas id="pieChart"></canvas>
+
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+                <!--Card-->
+                <div class="card mb-4">
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <!-- List group links -->
+                        <div class="list-group list-group-flush">
+                            <a class="list-group-item list-group-item-action waves-effect">
+                                <span style="padding-right: 0.5rem;">合格</span>
+                                <span class=" badge badge-success badge-pill pull-right"
+                                      style=" padding-right: 1rem; padding-left: 1rem;">72%
+                    <i class="fas fa-arrow-up ml-1"></i>
+                  </span>
+                                <span class=" badge badge-pill pull-right"
+                                      style="color: dodgerblue!important; padding-left: 1rem; padding-right:1rem;">详情
+                  </span>
+                            </a>
+
+                            <a class="list-group-item list-group-item-action waves-effect">
+                                <span style="padding-right: 0.5rem;">超标</span>
+                                <span class="badge badge-danger badge-pill pull-right"
+                                      style="padding-right: 1rem; padding-left: 1rem;">8%
+                    <i class="fas fa-arrow-up ml-1"></i>
+                  </span>
+                                <span class=" badge badge-pill pull-right"
+                                      style="color: dodgerblue!important; padding-left: 1rem; padding-right:1rem;">详情
+                  </span>
+                            </a>
+
+                            <a class="list-group-item list-group-item-action waves-effect">
+                                <span style="padding-right: 0.5rem;">无效</span>
+                                <span class=" badge badge-pill pull-right"
+                                      style="color: grey!important; padding-right: 1rem; padding-left: 1rem; background-color: #f5f5f5!important">11%
+                    <i class="fas fa-arrow-down ml-1"></i>
+                  </span>
+                                <span class=" badge badge-pill pull-right"
+                                      style="color: dodgerblue!important; padding-left: 1rem; padding-right:1rem;">详情
+                  </span>
+                            </a>
+
+                            <a class="list-group-item list-group-item-action waves-effect">
+                                <span style="padding-right: 0.5rem;">无车牌</span>
+                                <span class=" badge badge-warning badge-pill pull-right"
+                                      style="color: grey!important; padding-right: 1rem; padding-left: 1rem;">9%
+                    <i class="fas fa-arrow-down ml-1"></i>
+                  </span>
+                                <span class=" badge badge-pill pull-right"
+                                      style="color: dodgerblue!important; padding-left: 1rem; padding-right:1rem;">详情
+                  </span>
+                            </a>
+
+                        </div>
+                        <!-- List group links -->
+
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <!-- Table  -->
+                        <table class="table table-hover">
+                            <!-- Table head -->
+                            <thead class="blue-grey lighten-4">
+                            <tr>
+                                <th>超标汽油车辆统计</th>
+                                <th>数量</th>
+                                <th class="text-center">占超标车辆比例</th>
+                                <th class="text-center">占比趋势</th>
+                            </tr>
+                            </thead>
+                            <!-- Table head -->
+
+                            <!-- Table body -->
+                            <tbody>
+                            <tr>
+                                <th scope="row">48小时</th>
+                                <td>37</td>
+                                <td class="text-center">84%</td>
+                                <td class="text-center">
+                        <span class="badge badge-pill pull-right"
+                              style="color: grey!important; padding-right: 1rem; padding-left: 1rem; background-color: #f5f5f5!important">
+                            <i class="fas fa-arrow-down ml-1"></i>
+                        </span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">本周</th>
+                                <td>121</td>
+                                <td class="text-center">86%</td>
+                                <td class="text-center">
+                        <span class=" badge badge-pill pull-right"
+                              style="color: grey!important; padding-right: 1rem; padding-left: 1rem; background-color: #f5f5f5!important">
+                            <i class="fas fa-arrow-up ml-1"></i>
+                        </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">月度</th>
+                                <td>468</td>
+                                <td class="text-center">79%</td>
+                                <td class="text-center">
+                        <span class=" badge badge-pill pull-right"
+                              style="color: grey!important; padding-right: 1rem; padding-left: 1rem; background-color: #f5f5f5!important">
+                            <i class="fas fa-arrow-down ml-1"></i>
+                        </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <!-- Table body -->
+                        </table>
+                        <!-- Table  -->
+
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <!-- Table  -->
+                        <table class="table table-hover">
+                            <!-- Table head -->
+                            <thead class="brown lighten-2">
+                            <tr>
+                                <th>超标柴油车辆统计</th>
+                                <th>数量</th>
+                                <th class="text-center">占超标车辆比例</th>
+                                <th class="text-center">占比趋势</th>
+                            </tr>
+                            </thead>
+                            <!-- Table head -->
+
+                            <!-- Table body -->
+                            <tbody>
+                            <tr>
+                                <th scope="row">48小时</th>
+                                <td>7</td>
+                                <td class="text-center">16%</td>
+                                <td class="text-center">
+                        <span class=" badge badge-pill pull-right"
+                              style="color: grey!important; padding-right: 1rem; padding-left: 1rem; background-color: #f5f5f5!important">
+                            <i class="fas fa-arrow-up ml-1"></i>
+                        </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">本周</th>
+                                <td>20</td>
+                                <td class="text-center">14%</td>
+                                <td class="text-center">
+                        <span class=" badge badge-pill pull-right"
+                              style="color: grey!important; padding-right: 1rem; padding-left: 1rem; background-color: #f5f5f5!important">
+                            <i class="fas fa-arrow-down ml-1"></i>
+                        </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">月度</th>
+                                <td>124</td>
+                                <td class="text-center">21%</td>
+                                <td class="text-center">
+                        <span class="badge badge-pill pull-right"
+                              style="color: grey!important; padding-right: 1rem; padding-left: 1rem; background-color: #f5f5f5!important">
+                            <i class="fas fa-arrow-up ml-1"></i>
+                        </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <!-- Table body -->
+                        </table>
+                        <!-- Table  -->
+
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-6 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header">月度超标车辆百分比分布（按燃料类型）</div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <canvas id="lineChart"></canvas>
+
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-6 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header">超标车辆污染物超标百分比平均值分布（按燃料类型）</div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <canvas id="radarChart"></canvas>
+
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-6 mb-4">
+
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+</main>
+
+{% endblock %}
+<!--Main layout-->
+
+
+
+

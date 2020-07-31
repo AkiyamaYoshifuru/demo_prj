@@ -1,0 +1,312 @@
+{% extends 'db0/base.html' %}
+{% load static %}
+
+{% block content %}
+<!--Main layout-->
+<br/>
+
+    <div class="container-base">
+
+        <!--Section: Main panel 1-->
+        <section class="card card-cascade narrower mb-5">
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-5">
+
+                    <!--Panel Header-->
+                    <div class="view view-cascade py-3 gradient-card-header info-color-dark">
+                        <h5 class="mb-0">实时智能车辆抓拍</h5>
+                    </div>
+                    <!--/Panel Header-->
+
+                    <!--Panel content-->
+                    <div class="card-body">
+
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--占位居中用-->
+                            <div class="col-md-1"></div>
+                            <!--Grid column-->
+                            <div class="col-md-11 mb-4 left-float">
+                                <!--left-float-->
+                                <!-- Card -->
+                                <div class="card news-card">
+                                    <!-- Heading-->
+                                    <div class="card-body">
+                                        <div class="content">监控球机视频流</div>
+                                    </div>
+                                    <!-- Card video-->
+                                    <div class="modal-body mb-0 p-0">
+                                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                            <video id='CCTV' class='video-js' autoplay controls preload='auto' loop="loop">
+                                                <source src="{% static 'db0/img/1.mp4'%}" type='video/mp4'>
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <!-- Card -->
+                                </div>
+                                <!-- Grid column -->
+
+                                <!-- Card -->
+                                <div class="card news-card">
+                                    <!-- Heading-->
+                                    <div class="card-body">
+                                        <div class="content">抓拍枪机视频流</div>
+                                    </div>
+                                    <!-- Card video-->
+                                    <div class="modal-body mb-0 p-0">
+                                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                            <video id='CCTV' class='video-js' autoplay controls preload='auto' loop="loop">
+                                                <source src="{% static 'db0/img/1.mp4'%}" type='video/mp4'>
+                                            </video>
+                                        </div>
+                                    </div>
+                                    <!-- Card -->
+                                </div>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </div>
+                    <!--Panel content-->
+                </div>
+                <!--Grid column-->
+
+
+                <!--Grid column-->
+                <div class="col-md-3">
+
+                    <!--Panel Header-->
+                    <div class="view view-cascade py-3 gradient-card-header info-color-dark mb-4">
+                        <h5 class="mb-0">抓拍结果</h5>
+                    </div>
+                    <!--/Card image-->
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 mb-0">
+                                <!-- Card -->
+                                <div class="card news-card">
+
+                                    <!-- Heading-->
+                                    <div class="card-body">
+                                        <div class="content">车辆抓拍</div>
+                                    </div>
+
+                                    <!-- Card video-->
+                                    <div class="modal-body mb-0 p-0">
+                                        <a>
+                                            <img id="Car-address" class="img-fluid z-depth-1" src="{% static 'db0/img/car_main.jpg' %}" alt="video" data-toggle="modal" data-target="#modal1">
+                                        </a>
+                                    </div>
+
+                                    <!-- Card Segment Line -->
+                                    <br>
+                                    <!-- Card -->
+
+                                </div>
+                                <!-- Grid column -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 mb-0">
+                                <!-- Card -->
+                                <div class="card news-card">
+
+                                    <!-- Heading-->
+                                    <div class="card-body">
+                                        <div class="content">车牌识别
+                                            <span id='Plate-number' class="badge info-color-dark p-2 float-right">京N 7UV90</span>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Card video-->
+                                    <div class="modal-body mb-0 p-0">
+                                        <a>
+                                            <img id="Plate-address" class="img-fluid z-depth-1 center_float" src="{% static 'db0/img/plate.jpg' %}" alt="video" data-toggle="modal" data-target="#modal1">
+                                        </a>
+                                    </div>
+                                    <!-- Card -->
+
+                                </div>
+                                <!-- Grid column -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 mb-0">
+                                <!--card-->
+                                <div class="card news-card">
+                                    <!-- Heading-->
+                                    <div class="card-body">
+                                        <div class="content">
+                                            设备状况
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="content">
+                                            <span class="badge indigo lighten-5 p-2 black-text">遥感主机</span>
+                                            <span class="badge indigo lighten-5 p-2 success-text">正常</span>
+                                            <span class="badge indigo lighten-5 p-2 black-text">黑烟车抓拍</span>
+                                            <span class="badge indigo lighten-5 p-2 success-text">正常</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="content">
+                                            <span class="badge indigo lighten-5 p-2 black-text">车牌抓拍</span>
+                                            <span class="badge indigo lighten-5 p-2 warning-text">待维护</span>
+                                            <span class="badge indigo lighten-5 p-2 black-text">气象探头</span>
+                                            <span class="badge indigo lighten-5 p-2 error-text">异常</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-4">
+
+                    <!--Panel Header-->
+                    <div class="view view-cascade py-3 gradient-card-header info-color-dark mb-4">
+                        <h5 class="mb-0">实时数据</h5>
+                    </div>
+                    <!--/Card image-->
+
+                    <!--Grid column-->
+                    <div class="col-md-12 mb-4">
+                        <div class="card news-card">
+                            <!--Date select-->
+                            <p class="lead center_float">
+                                <span class="badge info-color-dark p-2">遥测结果</span>
+                                <span id="Result-value" class="badge success-color p-2 float-right">合格</span>
+                            </p>
+                            <!--data-->
+                            <div class="card-body">
+                                <div class="content">
+                                    <span class="badge indigo lighten-5 p-2 black-text">一氧化碳(CO)</span>
+                                    <span id="CO-value" class="badge indigo lighten-5 p-2 args-value">1.43 %</span>
+                                    <span class="badge indigo lighten-5 p-2 black-text  ">二氧化碳(CO<sub>2</sub>)</span>
+                                    <span id="CO2-value" class="badge indigo lighten-5 p-2 args-value">14.029 %</span>
+
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="content">
+                                    <span class="badge indigo lighten-5 p-2 black-text  ">一氧化氮(NO)</span>
+                                    <span id="NO-value"
+                                          class="badge indigo lighten-5 p-2 args-value">305.663  ppm</span>
+                                    <span class="badge indigo lighten-5 p-2 black-text  ">不透光度</span>
+                                    <span id="Opacity-value" class="badge indigo lighten-5 p-2 args-value">2.973</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="content">
+                                    <span class="badge indigo lighten-5 p-2 black-text  ">碳氢化合物(HC)</span>
+                                    <span id="HC-value" class="badge indigo lighten-5 p-2 args-value">102.305 ppm</span>
+                                    <span class="badge indigo lighten-5 p-2 black-text  ">黑度</span>
+                                    <span id="Black-value" class="badge indigo lighten-5 p-2 args-value">0</span>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="content">
+                                    <span class="badge indigo lighten-5 p-2   black-text">比功率(VSP)</span>
+                                    <span id="VSP-value"
+                                          class="badge indigo lighten-5 p-2 args-value">5.476 kW/ T</span>
+                                    <span class="badge indigo lighten-5 p-2   black-text">运行时长</span>
+                                    <span id="Time-value" class="badge indigo lighten-5 p-2 args-value">12:20:18</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-12 mb-4">
+                        <div class="card news-card">
+                            <!--Date select-->
+                            <p class="lead center_float">
+                                <span class="badge info-color-dark p-2">环境参数</span>
+                            </p>
+                            <!--data-->
+                            <div class="card-body">
+                                <div class="content">
+                                    <span class="badge indigo lighten-5 p-2   black-text">温度</span>
+                                    <span id="Climate-Temperature-value" class="badge indigo lighten-5 p-2 args-value">31.6 ℃</span>
+                                    <span class="badge indigo lighten-5 p-2 black-text  ">PM 2.5</span>
+                                    <span id="Climate-PM25-value"
+                                          class="badge indigo lighten-5 p-2 args-value">40.00</span>
+                                    <span class="badge indigo lighten-5 p-2 black-text  ">PM 10</span>
+                                    <span id="Climate-PM10-value"
+                                          class="badge indigo lighten-5 p-2 args-value">62.00</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="content">
+                                    <span class="badge indigo lighten-5 p-2 black-text  ">湿度</span>
+                                    <span id="Climate-Humidity-value" class="badge indigo lighten-5 p-2 args-value">54.9  %RH</span>
+                                    <span class="badge indigo lighten-5 p-2 black-text  ">CO</span>
+                                    <span id="Climate-CO-value"
+                                          class="badge indigo lighten-5 p-2 args-value">1.296</span>
+                                    <span class="badge indigo lighten-5 p-2 black-text  ">O<sub>3</sub></span>
+                                    <span id="Climate-O3-value"
+                                          class="badge indigo lighten-5 p-2 args-value">222.121</span>
+
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="content">
+                                    <span class="badge indigo lighten-5 p-2   black-text">SO<sub>2</sub></span>
+                                    <span id="Climate-SO2-value"
+                                          class="badge indigo lighten-5 p-2 args-value">0.000</span>
+                                    <span class="badge indigo lighten-5 p-2   black-text">NO<sub>2</sub></span>
+                                    <span id="Climate-NO2-value"
+                                          class="badge indigo lighten-5 p-2 args-value">312.931</span>
+                                    <span class="badge indigo lighten-5 p-2   black-text">气压</span>
+                                    <span id="Climate-Pressure-value" class="badge indigo lighten-5 p-2 args-value">1001.7 HPA</span>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="content">
+                                    <span class="badge indigo lighten-5 p-2   black-text">雨量</span>
+                                    <span id="Climate-Rainfall-value"
+                                          class="badge indigo lighten-5 p-2 args-value">0</span>
+                                    <span class="badge indigo lighten-5 p-2   black-text">风向</span>
+                                    <span id="Climate-wind-direction-value"
+                                          class="badge indigo lighten-5 p-2 args-value">113.9 °</span>
+                                    <span class="badge indigo lighten-5 p-2   black-text">风速</span>
+                                    <span id="Climate-wind-speed-value" class="badge indigo lighten-5 p-2 args-value">0.06 m/s</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid column-->
+
+            <!--Grid row-->
+
+        </section>
+        <!--Section: Main panel-->
+
+
+    </div>
+
+<!--Main layout-->
+{% endblock %}

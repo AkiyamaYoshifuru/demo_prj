@@ -1,0 +1,77 @@
+{% extends 'db0/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-4">
+
+    <p class="font-weight-bold"><strong>遥测系统数据上传进度 </strong></p>
+
+    <hr>
+
+    <span class="p-2"><strong>上传目标服务器</strong></span> <span class="p-2">北京市东城区环保局数据库服务器</span><span
+        class="p-2">#020001</span>
+
+    <hr>
+    <section class="section mb-5">
+
+        <h4 class="font-weight-bold mt-2">
+            <strong>上传记录</strong>
+        </h4>
+        <hr class="red title-hr">
+
+        <ul class="list-group z-depth-1 mt-4">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>记录时间： 2019-09-16 12:24:36 </a>
+                <span class="p-2">遥感监测图片数据
+                <a class="p-2" href=""> 详情</a>
+                </span>
+                <span class="badge badge-info badge-pill">上传中</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>记录时间： 2019-09-16 12:19:27 </a>
+                <span class="p-2">遥感监测图片数据
+                 <a class="p-2" href=""> 详情</a>
+                </span>
+                <span class="badge badge-danger badge-pill">上传失败，重试中</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>记录时间： 2019-09-16 12:16:33 </a>
+                <span class="p-2">遥感监测数据
+                     <a class="p-2" href=""> 详情</a>
+                </span>
+                <span class="badge badge-success badge-pill">已上传</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>记录时间： 2019-09-16 12:11:28 </a>
+                <span class="p-2">点位环境空气数据
+                     <a class="p-2" href=""> 详情</a>
+                </span>
+                <span class="badge badge-success badge-pill">已上传</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>记录时间： 2019-09-16 12:06:55 </a>
+                <span class="p-2">固定式点位运行数据
+                 <a class="p-2" href=""> 详情</a>
+                </span>
+                <span class="badge badge-success badge-pill">已上传</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>记录时间： 2019-09-16 12:01:29 </a>
+                <span class="p-2">设备自检信息数据
+                 <a class="p-2" href=""> 详情</a>
+                </span>
+                <span class="badge badge-success badge-pill">已上传</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>记录时间： 2019-09-16 11:52:58</a>
+                <span class="p-2">设备自检过程数据
+                 <a class="p-2" href=""> 详情</a>
+                </span>
+                <span class="badge badge-success badge-pill">已上传</span>
+            </li>
+        </ul>
+    </section>
+    <div class="progress md-progress primary-color-dark">
+        <div class="indeterminate"></div>
+    </div>
+    {% endblock %}

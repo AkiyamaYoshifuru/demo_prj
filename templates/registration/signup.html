@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{# static应该在core目录下 #}
+{% load static %}
+{% block content %}
+
+  <h2>请在联系技术支持后选择要创建的账号种类</h2>
+  <p class="lead">技术支持企业微信群：<img src="{% static 'img/RobotTestQR.jpg' %}" /></p>
+  <a href="{% url 'officer_signup' %}" class="btn btn-student btn-lg" role="button">调试用临时账号（标定或维修）</a>
+  <a href="{% url 'operator_signup' %}" class="btn btn-teacher btn-lg" role="button">运维操作员</a>
+  {# href不能用在URL文件里定义的name，否则会报错：缺少相应的view #}
+  <a href="admin" class="btn btn-teacher btn-lg" role="button">设备管理员</a>
+{% endblock %}

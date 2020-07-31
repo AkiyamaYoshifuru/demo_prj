@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load dict_key %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-8 col-sm-10 col-12">
+      <h2>创建{% for k in signup_view_user_type %}{{signup_view_user_type|dict_key:user_type}}{% endfor %}账号</h2>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">注册</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

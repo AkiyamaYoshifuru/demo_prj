@@ -1,0 +1,264 @@
+{% extends 'db0/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="contact-section my-5">
+
+    <!-- Form with header -->
+    <div class="card">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-lg-8">
+
+                <div class="card-body form">
+
+                    <!-- Header -->
+                    <h3 class="mt-4">遥测限值设置</h3>
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-name" class="form-control">
+                                <label for="form-contact-name" class>CO 限值</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-email" class="form-control">
+                                <label for="form-contact-email" class>HC 限值</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-email" class="form-control">
+                                <label for="form-contact-email" class>不透光度限值</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-email" class="form-control">
+                                <label for="form-contact-email" class>黑度限值</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-email" class="form-control">
+                                <label for="form-contact-email" class>VSP 上限（汽油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-email" class="form-control">
+                                <label for="form-contact-email" class>VSP 下限（汽油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-name" class="form-control">
+                                <label for="form-contact-name" class>温度上限（汽油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-email" class="form-control">
+                                <label for="form-contact-email" class>温度下限（汽油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-email" class="form-control">
+                                <label for="form-contact-email" class>温度上限（柴油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-email" class="form-control">
+                                <label for="form-contact-email" class>温度下限（柴油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-email" class="form-control">
+                                <label for="form-contact-email" class>湿度 上限（汽油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-email" class="form-control">
+                                <label for="form-contact-email" class>湿度 下限（汽油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-phone" class="form-control">
+                                <label for="form-contact-phone" class>NO 限值（汽油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-company" class="form-control">
+                                <label for="form-contact-company" class>NO 限值（柴油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-company" class="form-control">
+                                <label for="form-contact-company" class>风速上限（汽油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-company" class="form-control">
+                                <label for="form-contact-company" class>风速上限（柴油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-company" class="form-control">
+                                <label for="form-contact-company" class>大气压上限（柴油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <div class="md-form mb-0">
+                                <input type="text" id="form-contact-company" class="form-control">
+                                <label for="form-contact-company" class>大气压下限（柴油车）</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-2">
+                            <p></p>
+                            <strong>请输入设定日志信息</strong>
+                            <div class="md-form">
+                                <input placeholder="Selected date" type="text" id="date-picker-example"
+                                       class="form-control datepicker">
+                                <label for="date-picker-example">日期</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-3">
+                            <strong>设定操作人</strong> <span class="p-2">黄孚勋</span>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-lg-4">
+
+                <div class="card-body contact text-center h-100 white-text">
+
+                    <h3 class="my-4 pb-2">设备信息</h3>
+                    <ul class="text-lg-left list-unstyled ml-4">
+                        <li>
+                            <span class="p-2">点位编号</span><span>#59128</span><span class="p-2">遥测线编号</span><span># BJ12387</span>
+                        </li>
+                        <li>
+                            <p></p>
+                            <span class="p-2">当前限值设定日志信息</span><span class="p-2">16 July, 2019</span><span class="p-2">10:24 am</span>
+                        </li>
+                        <li>
+                            <p></p>
+                            <span class="p-2">当前限值设定操作人</span><span class="p-2">黄孚勋</span>
+                        </li>
+                    </ul>
+                    <hr class="hr-light my-4">
+
+
+                </div>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+    </div>
+    <!-- Form with header -->
+
+</section>
+{% endblock %}
