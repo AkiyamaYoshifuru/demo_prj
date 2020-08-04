@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 from django.contrib.auth.models import AbstractUser
 
+# 基础用户类型，继承自Django抽象用户型，此类用法是推荐的实践
 class User(AbstractUser):
     
     is_officer = models.BooleanField(default=False)

@@ -61,13 +61,15 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user"></i>
-                    <span class="clearfix d-none d-sm-inline-block">运维设置与手动标定</span>
+                    <span class="clearfix d-none d-sm-inline-block">运维设置与用户管理</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{% url 'device_setting' %}">串口和摄像头参数设置</a>
                     <a class="dropdown-item" href="{% url 'value_limit_input' %}">手动标定参数输入</a>
                     <a class="dropdown-item" href="{% url 'upload_status' %}">点位数据上传状态</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">退出登录</a>
                 </div>
+                
             </li>
         </ul>
 

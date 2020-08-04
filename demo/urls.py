@@ -22,6 +22,7 @@ urlpatterns = [
     # 因为后续django-restful-framework的关系，app在project子目录下，需要注意app模块引用路径
     path('', include('demo.core.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    # path('accounts/auth', dashboard.auth),
     # ''引号里的部分用在html模版里，交互使用！
     path('accounts/signup/', dashboard.SignUpView.as_view(), name='signup'),
     path('accounts/signup/operator', operators.DftStaffSignUpView.as_view(), name='operator_signup'),
@@ -31,10 +32,10 @@ urlpatterns = [
     # 重定向至dashboard界面，TODO：需要加登陆decorator
     path('accounts/dashboard/', dashboard.dashboard, name='dashboard'),
     # TODO:从dashboard跳转至其他页面需要重定向至应用core的urls设置规则
-    path('accounts/signed_in/tables', dashboard.tables ,name='data_tables'),
-    path('accounts/signed_in/statics', dashboard.statics ,name='statistical_chart'),
-    path('accounts/signed_in/settings', dashboard.settings, name="device_setting"),
-    path('accounts/signed_in/valueSetting', dashboard.valueInputSetting, name="value_limit_input"),
+    path('accounts/signed_in/tables', operators.tables ,name='data_tables'),
+    path('accounts/signed_in/statics', operators.statics ,name='statistical_chart'),
+    path('accounts/signed_in/settings', operators.settings, name="device_setting"),
+    path('accounts/signed_in/valueSetting', operators.valueInputSetting, name="value_limit_input"),
     path('accounts/signed_in/upload', dashboard.upload, name="upload_status"),
     
 ]

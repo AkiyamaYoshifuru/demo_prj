@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from django.contrib.messages import constants as messages
+from django.conf import global_settings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -150,3 +151,12 @@ MESSAGE_TAGS = {
 # Third party apps configuration
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+# 已经在1.8版本后被弃用了
+'''
+make sure that the next key is passed from the actual login form (in your case, this is the form that is rendered in /accounts/login/), to the /accounts/auth view.
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    "django.core.context_processors.request",
+) '''
+

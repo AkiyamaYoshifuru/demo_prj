@@ -17,17 +17,10 @@ def home(request):
 def dashboard(request):
     return render(request, 'db0/dashboard.html')
 
-def tables(request):
-    return render(request, 'db0/data_tables.html')
-
-def statics(request):
-    return render(request, 'db0/statistical_chart.html')
-
-def settings(request):
-    return render(request, 'db0/device_setting.html')
-
-def valueInputSetting(request):
-    return render(request, 'db0/value_limit_input.html')
+def auth(request):
+    print(request)
+    if request.POST.get("next"):
+        return redirect(request.POST.get("next"))
 
 def upload(request):
     return render(request, 'db0/upload_status.html')
